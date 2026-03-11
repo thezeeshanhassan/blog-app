@@ -13,19 +13,26 @@ export default function HomePage() {
         description="Quick links for the blog"
       />
       <PageBody>
-        <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
-          <Button asChild variant="outline" size="lg" className="flex items-center gap-2">
-            <Link href="/blog">
-              <BookOpen className="h-4 w-4" />
-              Read Blog
-            </Link>
-          </Button>
-          <Button asChild size="lg" className="flex items-center gap-2">
-            <Link href="/home/blog/create">
-              <PenSquare className="h-4 w-4" />
-              Create Post
-            </Link>
-          </Button>
+        <div className="flex min-h-[200px] items-center justify-center">
+          <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="flex items-center gap-2"
+            >
+              <Link href="/blog">
+                <BookOpen className="h-4 w-4" />
+                Read Blog
+              </Link>
+            </Button>
+            <Button asChild size="lg" className="flex items-center gap-2">
+              <Link href="/home/blog/create">
+                <PenSquare className="h-4 w-4" />
+                Create Post
+              </Link>
+            </Button>
+          </div>
         </div>
       </PageBody>
     </>

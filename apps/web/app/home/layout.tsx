@@ -1,17 +1,11 @@
-import { use } from 'react';
-
-import { cookies } from 'next/headers';
-
 import {
   Page,
-  PageLayoutStyle,
   PageMobileNavigation,
   PageNavigation,
 } from '@kit/ui/page';
 import { SidebarProvider } from '@kit/ui/shadcn-sidebar';
 
 import { AppLogo } from '~/components/app-logo';
-import { navigationConfig } from '~/config/navigation.config';
 import { withI18n } from '~/lib/i18n/with-i18n';
 import { requireUserInServerComponent } from '~/lib/server/require-user-in-server-component';
 
@@ -21,12 +15,6 @@ import { HomeMobileNavigation } from './_components/home-mobile-navigation';
 import { HomeSidebar } from './_components/home-sidebar';
 
 function HomeLayout({ children }: React.PropsWithChildren) {
-  const style = use(getLayoutStyle());
-
-  if (style === 'sidebar') {
-    return <SidebarLayout>{children}</SidebarLayout>;
-  }
-
   return <HeaderLayout>{children}</HeaderLayout>;
 }
 
@@ -79,11 +67,4 @@ function MobileNavigation() {
   );
 }
 
-async function getLayoutStyle() {
-  const cookieStore = await cookies();
-
-  return (
-    (cookieStore.get('layout-style')?.value as PageLayoutStyle) ??
-    navigationConfig.style
-  );
-}
+async function getLayoutStyle() {}
