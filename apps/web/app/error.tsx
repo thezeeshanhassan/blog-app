@@ -60,10 +60,9 @@ const ErrorPage = ({
               </Button>
 
               <Button className={'w-full'} variant={'outline'} asChild>
-                <Link href={'/contact'}>
+                <Link href="/">
                   <MessageCircle className={'mr-2 h-4'} />
-
-                  <Trans i18nKey={'common:contactUs'} />
+                  <Trans i18nKey={'common:backToHomePage'} />
                 </Link>
               </Button>
             </div>

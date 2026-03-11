@@ -57,15 +57,12 @@ export function useAuthChangeListener({
         return;
       }
 
-      // revalidate user session when user signs in or out
+      // redirect to marketing home when user signs out (non-protected page)
       if (event === 'SIGNED_OUT') {
-        // sometimes Supabase sends SIGNED_OUT event
-        // but in the auth path, so we ignore it
         if (AUTH_PATHS.some((path) => pathName.startsWith(path))) {
           return;
         }
-
-        window.location.reload();
+        window.location.assign('/');
       }
     });
 

@@ -24,11 +24,10 @@ export async function GET() {
 function getPaths() {
   const paths = [
     '/',
-    '/faq',
+    '/blog',
     '/cookie-policy',
     '/terms-of-service',
     '/privacy-policy',
-    // add more paths here
   ];
 
   return paths.map((path) => {

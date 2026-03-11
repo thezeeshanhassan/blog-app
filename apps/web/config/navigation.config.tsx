@@ -1,4 +1,4 @@
-import { Home, User } from 'lucide-react';
+import { Home, PenSquare, User } from 'lucide-react';
 import { z } from 'zod';
 
 import { NavigationConfigSchema } from '@kit/ui/navigation-schema';
@@ -16,6 +16,16 @@ const routes = [
         path: pathsConfig.app.home,
         Icon: <Home className={iconClasses} />,
         end: true,
+      },
+      {
+        label: 'marketing:blog',
+        path: '/blog',
+        Icon: <PenSquare className={iconClasses} />,
+      },
+      {
+        label: 'Create Post',
+        path: '/home/blog/create',
+        Icon: <PenSquare className={iconClasses} />,
       },
     ],
   },
